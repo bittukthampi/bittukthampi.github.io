@@ -101,6 +101,30 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.45);
 }
 
+/* RESUME BUTTON */
+.hero-buttons {
+  margin-top: 18px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: #0bb089;
+  color: #ffffff;
+  border: none;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  background: #099173;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
 /* SECTIONS */
 .section {
   max-width: 900px;
