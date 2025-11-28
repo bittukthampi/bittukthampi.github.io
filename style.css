@@ -15,52 +15,73 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
+
 .nav-container {
   max-width: 1000px;
   margin: auto;
-  padding: 12px 20px;
+  padding: 14px 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
 }
-.logo {
-  font-weight: bold;
-  font-size: 1.15rem;
-}
+
 .nav-links a {
-  margin-left: 15px;
+  margin: 0 18px;
   color: #e0ffff;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
 }
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background: #0bb089;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
 .nav-links a:hover {
   color: #0bb089;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* HERO */
 .hero {
   max-width: 1000px;
-  margin: 40px auto 30px;
+  margin: 40px auto;
   padding: 30px 20px;
   display: grid;
   grid-template-columns: 60% 40%;
   align-items: center;
   gap: 20px;
 }
+
 .hero-text h1 {
   margin: 0;
   font-size: 2.4rem;
 }
+
 .hero-text h1 span {
   color: #0bb089;
 }
+
 .hero-text h2 {
   margin: 8px 0 12px;
   font-size: 1.3rem;
   opacity: 0.9;
 }
+
 .hero-text p {
   font-size: 0.97rem;
   line-height: 1.6;
@@ -71,6 +92,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .hero-image img {
   width: 260px;
   height: 260px;
@@ -86,17 +108,20 @@ body {
   margin: 40px auto;
   padding: 0 20px;
 }
+
 .section.alt {
   background: rgba(0, 0, 0, 0.22);
   border-radius: 10px;
   padding: 25px 20px;
 }
+
 .section h2 {
   text-align: center;
   font-size: 1.7rem;
   margin-bottom: 18px;
   position: relative;
 }
+
 .section h2::after {
   content: "";
   width: 50px;
@@ -106,22 +131,13 @@ body {
   margin: 8px auto 0;
 }
 
-/* ABOUT */
-.about-details {
-  list-style: none;
-  padding: 0;
-  margin-top: 14px;
-}
-.about-details li {
-  margin-bottom: 8px;
-}
-
 /* SKILLS */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 14px;
 }
+
 .skill {
   background: rgba(255,255,255,0.1);
   padding: 14px 16px;
@@ -137,6 +153,7 @@ body {
   border-radius: 6px;
   margin-bottom: 18px;
 }
+
 .project h3 {
   margin: 0 0 6px;
   color: #0bb089;
@@ -147,6 +164,7 @@ body {
   list-style: none;
   padding: 0;
 }
+
 .cert-list li {
   padding: 10px 0;
   border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -157,6 +175,7 @@ a {
   color: #0bb089;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
@@ -175,9 +194,11 @@ a:hover {
     grid-template-columns: 1fr;
     text-align: center;
   }
+
   .hero-image {
     margin-top: 20px;
   }
+
   .nav-links {
     display: none;
   }
