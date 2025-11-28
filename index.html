@@ -1,53 +1,155 @@
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bittu K Thampi | LiDAR & Photogrammetry Specialist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #1F2933, #2C3E50);
-  color: #E5E7EB;
-}
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6EH6DXWD25"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6EH6DXWD25');
+  </script>
+</head>
+<body>
 
-/* NAV */
-.navbar {
-  position: sticky;
-  top: 0;
-  background: rgba(17,24,39,0.9);
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-}
+<header class="navbar">
+  <div class="nav-container">
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+    </nav>
+  </div>
+</header>
 
-.nav-container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: center;
-}
+<section id="home" class="hero">
+  <div class="hero-text">
+    <!-- ✅ FULL NAME – ONE COLOR -->
+    <h1>Hi, I'm Bittu K Thampi</h1>
+    <h2>LiDAR & Photogrammetry Specialist</h2>
 
-.nav-links a {
-  color: #EAF2F8;
-  margin: 0 18px;
-  text-decoration: none;
-  font-weight: 600;
-}
+    <p class="hero-subtitle">
+      Experienced in LiDAR data classification, LiDAR data matching,
+      feature extraction, and aerial photogrammetry projects.
+    </p>
 
-.nav-links a:hover {
-  color: #3498DB;
-}
+    <h3 class="hero-experience-title">Experience</h3>
 
-/* HERO */
-.hero {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 30px 20px;
-  display: grid;
-  grid-template-columns: 60% 40%;
-  gap: 20px;
-}
+    <div class="hero-experience">
+      <p>
+        LiDAR and Photogrammetry Specialist with experience in
+        <strong>3D scanning, surveying, and spatial data processing</strong>.
+        Skilled in <strong>mobile mapping, UAV-based LiDAR, and SLAM LiDAR systems</strong>.
+      </p>
 
-.hero-text h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  color: #EAF2F8 !important; /* ✅ single co*
+      <p>
+        Experienced in LiDAR data capture, classification,
+        <strong>DSM/DTM generation</strong>, contour extraction,
+        post-processing, digitizing, <strong>QA/QC</strong>,
+        and final deliverable preparation.
+      </p>
+
+      <p>
+        Proficient in photogrammetry workflows using
+        <strong>static base station data</strong> for accurate
+        georeferencing and <strong>3D modeling</strong>.
+      </p>
+
+      <p>
+        Experienced in <strong>ArcGIS & QGIS</strong> for spatial data
+        management, analysis, and map production. Involved in
+        <strong>project coordination</strong> to ensure accurate,
+        timely, and high-quality delivery.
+      </p>
+    </div>
+
+    <!-- CONTACT BOXES -->
+    <div class="hero-contact">
+      <div class="contact-item">
+        <span>Email</span>
+        <a href="mailto:bittukthampi@gmail.com">bittukthampi@gmail.com</a>
+      </div>
+
+      <div class="contact-item">
+        <span>Phone</span>
+        <span>+91 97466 37500</span>
+      </div>
+
+      <div class="contact-item">
+        <span>LinkedIn</span>
+        <a href="https://www.linkedin.com/in/bittukthampi" target="_blank">
+          linkedin.com/in/bittukthampi
+        </a>
+      </div>
+    </div>
+
+    <!-- RESUME -->
+    <div class="hero-buttons">
+      <a
+        href="Bittu_K_Thampi_Resume.pdf"
+        class="btn"
+        download
+        onclick="gtag('event','resume_download',{event_category:'engagement'});"
+      >
+        DOWNLOAD RESUME
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="profile.jpg" alt="Bittu K Thampi">
+  </div>
+</section>
+
+<section id="skills" class="section alt">
+  <h2>Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill">UAV LiDAR</div>
+    <div class="skill">Mobile LiDAR</div>
+    <div class="skill">SLAM LiDAR</div>
+    <div class="skill">RTK GNSS</div>
+    <div class="skill">Photogrammetry</div>
+    <div class="skill">DSM / DTM</div>
+    <div class="skill">Contour Extraction</div>
+    <div class="skill">Terrain & Volume Analysis</div>
+    <div class="skill">ArcGIS & QGIS</div>
+    <div class="skill">AutoCAD / Civil 3D</div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <h2>Project Experience</h2>
+  <div class="project">
+    <h3>UAV LiDAR Survey – Airport Project</h3>
+    <p>DSM/DTM creation, orthophoto generation, static GNSS base processing.</p>
+  </div>
+  <div class="project">
+    <h3>UAV LiDAR Mapping – Mining Projects</h3>
+    <p>Cut & fill, stockpile volume, terrain analysis.</p>
+  </div>
+</section>
+
+<section id="certifications" class="section alt">
+  <h2>Certifications & Courses</h2>
+  <ul>
+    <li>ESRI – Going Places with Spatial Analysis</li>
+    <li>Geo University – CRS, Projections & Spatial Representation</li>
+  </ul>
+</section>
+
+<footer class="footer">
+  © <span id="year"></span> Bittu K Thampi
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
