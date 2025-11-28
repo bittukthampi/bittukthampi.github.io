@@ -1,205 +1,148 @@
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bittu K Thampi | LiDAR & Photogrammetry Specialist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #063b2f, #0b6b50);
-  color: #ffffff;
-}
+  <!-- NAVBAR (NO NAME) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-/* NAVBAR */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(0, 0, 0, 0.9);
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-}
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Bittu K Thampi</span></h1>
+      <h2>LiDAR & Photogrammetry Specialist</h2>
+      <p>
+        Specialized in UAV LiDAR, Mobile & SLAM LiDAR, RTK GNSS surveying,
+        and photogrammetry with experience in airport, mining, powerline,
+        and infrastructure projects.
+      </p>
+    </div>
 
-.nav-container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: center;
-}
+    <div class="hero-image">
+      <img src="profile.jpg" alt="Bittu K Thampi" />
+    </div>
+  </section>
 
-.nav-links a {
-  margin: 0 18px;
-  color: #e0ffff;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  position: relative;
-}
+  <!-- ABOUT / SUMMARY -->
+  <section id="about" class="section">
+    <h2>Professional Summary</h2>
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 3px;
-  background: #0bb089;
-  left: 0;
-  bottom: -6px;
-  transition: 0.3s;
-}
+    <p>
+      LiDAR and Photogrammetry Specialist with hands-on experience in
+      <strong>3D scanning, surveying, and spatial data processing</strong>.
+      Skilled in <strong>mobile mapping, UAV-based LiDAR, and SLAM LiDAR systems</strong>,
+      with strong expertise in LiDAR data capture, classification,
+      <strong>DSM/DTM generation</strong>, contour extraction, post-processing,
+      digitizing, <strong>QA/QC</strong>, and final deliverable preparation.
+    </p>
 
-.nav-links a:hover {
-  color: #0bb089;
-}
+    <p>
+      Proficient in <strong>photogrammetry workflows</strong>, including
+      post-processing of captured imagery using
+      <strong>static base station data</strong> for accurate georeferencing
+      and 3D modeling. Experienced in
+      <strong>ArcGIS and QGIS</strong> for spatial data management, analysis,
+      and map production. Actively involved in
+      <strong>project coordination</strong> to ensure accurate, timely, and
+      high-quality delivery of geospatial products.
+    </p>
+  </section>
 
-.nav-links a:hover::after {
-  width: 100%;
-}
+  <!-- SKILLS -->
+  <section id="skills" class="section alt">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">UAV LiDAR</div>
+      <div class="skill">Mobile & SLAM LiDAR</div>
+      <div class="skill">Backpack LiDAR</div>
+      <div class="skill">RTK GNSS (Static / RTK / PPK / CORS)</div>
+      <div class="skill">Photogrammetry & Orthophoto</div>
+      <div class="skill">DSM / DTM Generation</div>
+      <div class="skill">Contour Extraction</div>
+      <div class="skill">Terrain & Volume Analysis</div>
+      <div class="skill">Digitizing & QA/QC</div>
+      <div class="skill">ArcGIS & QGIS</div>
+      <div class="skill">AutoCAD / Civil 3D</div>
+    </div>
+  </section>
 
-/* HERO */
-.hero {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 30px 20px;
-  display: grid;
-  grid-template-columns: 60% 40%;
-  align-items: center;
-  gap: 20px;
-}
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2>Project Experience</h2>
 
-.hero-text h1 {
-  margin: 0;
-  font-size: 2.4rem;
-}
+    <div class="project">
+      <h3>UAV LiDAR Survey – Airport Project</h3>
+      <p>
+        Static base GNSS used for accurate georeferencing, LiDAR point cloud
+        generation and classification, DSM/DTM creation, and orthophoto
+        generation from aerial imagery.
+      </p>
+    </div>
 
-.hero-text h1 span {
-  color: #0bb089;
-}
+    <div class="project">
+      <h3>UAV LiDAR Mapping – Mining Projects</h3>
+      <p>
+        High-density LiDAR processing, cut & fill and stockpile volume
+        analysis, terrain and slope analysis using DSM/DTM.
+      </p>
+    </div>
 
-.hero-text h2 {
-  margin: 8px 0 12px;
-  font-size: 1.3rem;
-  opacity: 0.9;
-}
+    <div class="project">
+      <h3>Powerline & Infrastructure LiDAR Mapping</h3>
+      <p>
+        Corridor mapping, terrain modelling, and support for infrastructure
+        planning and maintenance.
+      </p>
+    </div>
 
-.hero-text p {
-  font-size: 0.97rem;
-  line-height: 1.6;
-}
+  </section>
 
-/* HERO IMAGE */
-.hero-image {
-  display: flex;
-  justify-content: center;
-}
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section alt">
+    <h2>Certifications & Courses</h2>
+    <ul class="cert-list">
+      <li>ESRI – Going Places with Spatial Analysis</li>
+      <li>Geo University – Coordinate Reference Systems, Projections, and Spatial Data Representation</li>
+    </ul>
+  </section>
 
-.hero-image img {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #0bb089;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
-}
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:bittukthampi@gmail.com">bittukthampi@gmail.com</a><br />
+      <strong>LinkedIn:</strong>
+      <a href="https://www.linkedin.com/in/bittukthampi" target="_blank">
+        linkedin.com/in/bittukthampi
+      </a><br />
+      <strong>Location:</strong> India
+    </p>
+  </section>
 
-/* SECTION */
-.section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
+  <footer class="footer">
+    © <span id="year"></span> Bittu K Thampi
+  </footer>
 
-.section.alt {
-  background: rgba(0, 0, 0, 0.22);
-  border-radius: 10px;
-  padding: 25px 20px;
-}
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-.section h2 {
-  text-align: center;
-  font-size: 1.7rem;
-  margin-bottom: 18px;
-  position: relative;
-}
-
-.section h2::after {
-  content: "";
-  width: 50px;
-  height: 3px;
-  background: #0bb089;
-  display: block;
-  margin: 8px auto 0;
-}
-
-/* SKILLS */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-}
-
-.skill {
-  background: rgba(255,255,255,0.1);
-  padding: 14px 16px;
-  border-radius: 6px;
-  text-align: center;
-  font-size: 0.95rem;
-}
-
-/* PROJECTS */
-.project {
-  background: rgba(255,255,255,0.08);
-  padding: 14px 16px;
-  border-radius: 6px;
-  margin-bottom: 18px;
-}
-
-.project h3 {
-  margin: 0 0 6px;
-  color: #0bb089;
-}
-
-/* CERTS */
-.cert-list {
-  list-style: none;
-  padding: 0;
-}
-
-.cert-list li {
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-/* LINKS */
-a {
-  color: #0bb089;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 18px 10px;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-image {
-    margin-top: 20px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-}
+</body>
+</html>
