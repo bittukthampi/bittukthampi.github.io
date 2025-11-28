@@ -1,47 +1,41 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
-  background: linear-gradient(135deg, #064635, #0b6b50);
   font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #064635, #0b6b50);
   color: #fff;
 }
 
-/* MAIN CONTAINER */
-.container {
+.page {
   max-width: 1100px;
   margin: 40px auto;
   background: rgba(0,0,0,0.25);
   border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.4);
   overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 /* HEADER */
-.header {
+.top {
   text-align: center;
-  padding: 35px 20px 25px;
+  padding: 30px 20px;
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.header h1 {
+.top h1 {
   margin: 0;
   font-size: 2rem;
 }
 
-.header h2 {
-  margin-top: 8px;
-  font-size: 1.1rem;
-  font-weight: normal;
+.top p {
+  margin-top: 6px;
+  font-size: 1.05rem;
   opacity: 0.85;
 }
 
-/* MAIN CONTENT */
-.main {
+/* BELOW HEADER */
+.content {
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 40% 60%;
 }
 
 /* LEFT */
@@ -50,30 +44,20 @@ body {
   border-right: 1px solid rgba(255,255,255,0.15);
 }
 
-.left section {
-  margin-bottom: 25px;
-}
-
 /* RIGHT */
 .right {
   padding: 30px;
 }
 
-.right section {
-  margin-bottom: 25px;
-}
-
-/* COMMON STYLES */
+/* COMMON */
 h3 {
-  margin-bottom: 10px;
-  font-size: 1.05rem;
+  margin-bottom: 8px;
   border-bottom: 1px solid rgba(255,255,255,0.3);
   padding-bottom: 4px;
 }
 
 ul {
-  margin-left: 18px;
-  padding-left: 0;
+  padding-left: 18px;
 }
 
 li {
@@ -81,18 +65,9 @@ li {
   line-height: 1.5;
 }
 
-a {
-  color: #b8f5ff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* RESPONSIVE */
+/* MOBILE */
 @media (max-width: 850px) {
-  .main {
+  .content {
     grid-template-columns: 1fr;
   }
 
