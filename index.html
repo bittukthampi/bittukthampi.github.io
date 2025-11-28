@@ -1,54 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Bittu K Thampi | Geospatial Professional</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="card">
 
-    <div class="profile">
-      <img src="profile.jpg" alt="Profile Photo">
-      <h2>Bittu K Thampi</h2>
-      <h4>Geospatial / Survey Professional</h4>
+    <!-- LEFT SIDE: PHOTO + BASIC INFO -->
+    <aside class="profile">
+      <img src="profile.jpg" alt="Bittu K Thampi" class="avatar" />
+
+      <h2 class="name">Bittu K Thampi</h2>
+      <p class="role">Geospatial / Survey Professional</p>
+
+      <p class="location">India</p>
 
       <div class="socials">
-        <a href="https://www.linkedin.com/in/bittukthampi">LinkedIn</a>
         <a href="mailto:bittukthampi@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/bittukthampi" target="_blank">
+          LinkedIn
+        </a>
       </div>
-    </div>
 
-    <div class="content">
+      <a href="cv.pdf" class="btn" target="_blank">
+        Download CV
+      </a>
+      <!-- put your PDF named cv.pdf in the same folder -->
+    </aside>
+
+    <!-- RIGHT SIDE: MAIN CONTENT -->
+    <main class="content">
+
+      <!-- ABOUT -->
       <section>
         <h3>About Me</h3>
         <p>
-          Geospatial professional specialized in UAV LiDAR, Mobile & SLAM LiDAR,
+          Geospatial professional specialized in LiDAR mapping, UAV survey,
           RTK GNSS surveying, photogrammetry, and spatial data analysis with
           experience in infrastructure, mining, and airport projects.
         </p>
-        <a class="btn" href="#">Download CV</a>
-      </section>
 
-      <section>
-        <h3>Interests</h3>
-        <ul>
-          <li>LiDAR Mapping</li>
-          <li>UAV Surveying</li>
-          <li>Spatial Analysis</li>
-          <li>Terrain & Volume Analysis</li>
+        <ul class="about-list">
+          <li><strong>Profession:</strong> Geospatial / Survey Professional</li>
+          <li><strong>Specialization:</strong> LiDAR, UAV Survey, RTK GNSS, Photogrammetry</li>
+          <li><strong>Location:</strong> India</li>
         </ul>
       </section>
 
+      <!-- PROFESSIONAL SUMMARY -->
       <section>
-        <h3>Education & Courses</h3>
+        <h3>Professional Summary</h3>
+        <p>
+          Experienced geospatial professional with strong expertise in LiDAR data
+          processing and analysis, including UAV LiDAR, Mobile LiDAR, SLAM-based
+          systems, and Backpack LiDAR mapping. Skilled in RTK GNSS surveying
+          (Static, RTK, PPK), UAV operations, and drafting workflows, with a focus
+          on high-accuracy spatial data delivery.
+        </p>
+      </section>
+
+      <!-- TWO-COLUMN SECTION: SKILLS + PROJECTS -->
+      <div class="two-column">
+
+        <!-- TECHNICAL SKILLS -->
+        <section>
+          <h3>Technical Skills</h3>
+          <ul>
+            <li>
+              <strong>LiDAR Data Processing &amp; Analysis</strong>
+              <ul>
+                <li>UAV LiDAR</li>
+                <li>Mobile LiDAR</li>
+                <li>SLAM LiDAR</li>
+                <li>Backpack LiDAR</li>
+              </ul>
+            </li>
+            <li>
+              <strong>RTK GNSS</strong>
+              <ul>
+                <li>Static, RTK, PPK</li>
+                <li>CORS-based processing</li>
+              </ul>
+            </li>
+            <li>UAV / Drone Surveying</li>
+            <li>AutoCAD &amp; Civil 3D Drafting</li>
+            <li>GIS Mapping &amp; Spatial Analysis</li>
+          </ul>
+        </section>
+
+        <!-- PROJECT EXPERIENCE -->
+        <section>
+          <h3>Project Experience</h3>
+          <ul>
+            <li>
+              <strong>UAV LiDAR Survey for Airport Project</strong>
+              <ul>
+                <li>Static base GNSS data used for accurate georeferencing</li>
+                <li>LiDAR point cloud generation and classification</li>
+                <li>DTM and DSM creation</li>
+                <li>Aerial image processing and orthophoto generation</li>
+              </ul>
+            </li>
+            <li>
+              <strong>UAV LiDAR Mapping for Mining Projects</strong>
+              <ul>
+                <li>High-density LiDAR point cloud generation</li>
+                <li>Cut &amp; fill and stockpile volume analysis</li>
+                <li>Terrain and slope analysis using DTM / DSM</li>
+              </ul>
+            </li>
+            <li>
+              <strong>UAV, SLAM &amp; Mobile LiDAR Data Processing</strong>
+              <ul>
+                <li>DTM / DSM generation from multi-platform LiDAR</li>
+              </ul>
+            </li>
+            <li><strong>Powerline LiDAR Mapping</strong></li>
+            <li><strong>Topographic &amp; Infrastructure Surveys</strong></li>
+          </ul>
+        </section>
+
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <section>
+        <h3>Certifications &amp; Courses</h3>
         <ul>
-          <li>ESRI – Going Places with Spatial Analysis</li>
-          <li>Geo University – Coordinate Reference Systems & Projections</li>
+          <li>ESRI – <em>Going Places with Spatial Analysis</em></li>
+          <li>Geo University – <em>Coordinate Reference Systems, Projections, and Spatial Data Representation</em></li>
         </ul>
       </section>
-    </div>
 
+      <!-- CONTACT -->
+      <section>
+        <h3>Contact</h3>
+        <p>
+          📧 <strong>Email:</strong>
+          <a href="mailto:bittukthampi@gmail.com">bittukthampi@gmail.com</a><br />
+          🔗 <strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/in/bittukthampi" target="_blank">
+            linkedin.com/in/bittukthampi
+          </a>
+        </p>
+      </section>
+
+    </main>
   </div>
 </body>
 </html>
