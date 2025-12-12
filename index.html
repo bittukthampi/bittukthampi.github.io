@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<!-- NAVIGATION (kept visible in contact-only mode) -->
+<!-- NAVIGATION -->
 <header class="navbar">
   <div class="nav-container">
     <nav class="nav-links">
@@ -131,7 +131,7 @@
   </ul>
 </section>
 
-<!-- CONTACT FORM (hidden by default, shown in contact-only mode) -->
+<!-- CONTACT FORM (hidden by default; shown when Contact clicked or hash=#contact) -->
 <section id="contact" class="section contact-section">
   <h2>Contact Me</h2>
 
@@ -168,36 +168,76 @@
 </footer>
 
 <script>
+/*
+  Behavior:
+  - If hash === '#contact' => hide main content sections (hero, skills, projects, certifications, footer)
+    but keep the navbar visible. Show contact form.
+  - Otherwise restore normal view.
+  - Works on load, on hashchange, and when nav links are clicked.
+*/
+
 (function () {
-  const selectorsToHide = [
-    '.hero',
-    '#skills',
-    '#projects',
-    '#certifications',
-    '.footer'
-  ];
+  const sectionsToHide = ['.hero', '#skills', '#projects', '#certifications', '.footer'];
 
   function showContactOnly() {
-    // hide sections (but keep navbar)
-    selectorsToHide.forEach(s => {
-      document.querySelectorAll(s).forEach(el => {
+    // Hide sections
+    sectionsToHide.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
         el.style.display = 'none';
       });
     });
-    // show contact
-    const contactEl = document.getElementById('contact');
-    if (contactEl) {
-      contactEl.style.display = 'block';
-      contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Show contact
+    const contact = document.getElementById('contact');
+    if (contact) {
+      contact.style.display = 'block';
+      // scroll contact into view below navbar
+      setTimeout(() => {
+        const yOffset = - (document.querySelector('.navbar')?.offsetHeight || 0) - 10;
+        const y = contact.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }, 80);
     }
     document.body.classList.add('show-contact-only');
   }
 
-  function restorePage() {
-    selectorsToHide.forEach(s => {
-      document.querySelectorAll(s).forEach(el => {
+  function restoreView() {
+    sectionsToHide.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
         el.style.display = '';
       });
     });
-    const contactEl = document.getElementById('contact');
-    if
+    const contact = document.getElementById('contact');
+    if (contact) contact.style.display = 'none';
+    document.body.classList.remove('show-contact-only');
+  }
+
+  function updateView() {
+    if (location.hash === '#contact') {
+      showContactOnly();
+    } else {
+      restoreView();
+    }
+  }
+
+  // init
+  window.addEventListener('load', updateView);
+  window.addEventListener('hashchange', updateView);
+
+  // ensure nav clicks behave instantly
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    const href = a.getAttribute('href') || '';
+    if (href === '#contact') {
+      // allow default then update view
+      setTimeout(updateView, 60);
+    } else if (href.startsWith('#')) {
+      // other internal nav -> restore view
+      setTimeout(updateView, 60);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
