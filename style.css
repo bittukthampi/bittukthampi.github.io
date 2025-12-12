@@ -1,23 +1,10 @@
-/* =========================
-   style.css — Final Version
-   ========================= */
-
 /* GLOBAL */
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-html, body {
-  height: 100%;
-}
-
+* { box-sizing: border-box; scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #1F2933, #2C3E50);
   color: #E5E7EB;
-  -webkit-font-smoothing: antialiased;
 }
 
 /* NAVBAR */
@@ -26,30 +13,18 @@ body {
   top: 0;
   background: rgba(17,24,39,0.9);
   border-bottom: 1px solid rgba(255,255,255,0.12);
-  z-index: 100;
+  z-index: 1000;
 }
-
-.nav-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: center;
-}
-
+.nav-container { max-width: 1000px; margin: auto; padding: 14px; display: flex; justify-content: center; }
 .nav-links a {
   color: #EAF2F8;
   margin: 0 18px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.05rem;
 }
+.nav-links a:hover { color: #3498DB; }
 
-.nav-links a:hover {
-  color: #3498DB;
-}
-
-/* HERO SECTION */
+/* HERO */
 .hero {
   max-width: 1000px;
   margin: 40px auto;
@@ -60,99 +35,34 @@ body {
   align-items: center;
 }
 
-/* HERO TEXT */
-.hero-text h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  color: #EAF2F8 !important; /* Full name same color */
-  line-height: 1.1;
-}
-
-.hero-text h2 {
-  margin: 8px 0 6px;
-  font-size: 1.35rem;
-  color: #D1E8FF;
-}
-
-.hero-subtitle {
-  font-size: 1rem;
-  font-style: italic;
-  color: #CBD5E1;
-  margin-bottom: 12px;
-  max-width: 95%;
-}
+.hero-text h1 { font-size: 2.5rem; color: #EAF2F8 !important; margin: 0; }
+.hero-text h2 { color: #D1E8FF; margin: 6px 0 12px; }
+.hero-subtitle { font-style: italic; color: #CBD5E1; margin-bottom: 12px; }
 
 /* EXPERIENCE */
-.hero-experience-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #FACC15; /* Yellow highlight for Experience heading */
-  margin-bottom: 6px;
-  letter-spacing: 0.3px;
-}
+.hero-experience-title { color: #FACC15; font-size: 1.1rem; font-weight: 700; }
+.hero-experience p { font-size: 0.95rem; line-height: 1.6; }
 
-.hero-experience p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 6px 0;
-}
-
-/* PROFILE IMAGE */
-.hero-image {
-  display: flex;
-  justify-content: center;
-}
-
+/* HERO IMAGE */
 .hero-image img {
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  object-fit: cover;
   border: 4px solid #3498DB;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  object-fit: cover;
 }
 
-/* CONTACT BOXES */
-.hero-contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 18px;
-}
-
+/* CONTACT INFO BOXES */
+.hero-contact { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 18px; }
 .contact-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
   padding: 10px 18px;
   border-radius: 999px;
   background: rgba(15,23,42,0.9);
   border: 1px solid #3498DB;
-  font-size: 0.9rem;
 }
-
-.contact-item span:first-child {
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  color: #9CCEFF;
-}
-
-.contact-item a,
-.contact-item span:last-child {
-  color: #EAF2F8 !important;
-  text-decoration: none;
-}
-
-.contact-item a:hover {
-  color: #3498DB !important;
-}
+.contact-item span:first-child { font-size: 0.72rem; color: #9CCEFF; font-weight: 600; }
 
 /* BUTTON */
-.hero-buttons {
-  margin-top: 20px;
-}
-
 .btn {
   padding: 14px 30px;
   border-radius: 999px;
@@ -160,128 +70,63 @@ body {
   color: #fff;
   font-weight: 700;
   text-decoration: none;
-  letter-spacing: 1px;
   display: inline-block;
-  box-shadow: 0 10px 25px rgba(52,152,219,0.35);
-  transition: 0.25s ease;
 }
 
-.btn:hover {
-  background: #2C80B4;
-  transform: translateY(-3px);
-  box-shadow: 0 16px 32px rgba(52,152,219,0.45);
-}
-
-/* =========================
-   TECHNICAL SKILL CARDS (2 per row)
-   ========================= */
-
+/* SKILL CARDS */
 .skills-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
-  margin-top: 22px;
 }
-
 .skill-card {
-  background: #ffffff;
+  background: #fff;
   color: #1F2933;
-  padding: 18px 20px;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 18px;
   border-left: 6px solid #3498DB;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: 0.2s;
+  border-radius: 12px;
+  font-weight: 600;
 }
 
-.skill-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.22);
-}
+/* PROJECTS */
+.section { max-width: 900px; margin: 40px auto; padding: 20px; }
+.section.alt { background: #F8FAFC; color: #1F2933; border-radius: 12px; }
 
-/* PROJECTS & SECTIONS */
-.section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
+/* ==============================
+   CONTACT FORM — HIDDEN UNTIL CLICKED
+   ============================== */
 
-.section.alt {
+/* HIDE CONTACT FORM INITIALLY */
+#contact { display: none; }
+
+/* SHOW ONLY WHEN CONTACT TAB IS CLICKED */
+#contact:target { display: block; }
+
+/* CONTACT FORM STYLE */
+.contact-form {
+  max-width: 700px;
+  margin: auto;
   background: #F8FAFC;
-  color: #1F2933;
-  padding: 26px 22px;
+  padding: 28px;
   border-radius: 12px;
 }
-
-.section h2 {
-  text-align: center;
-  color: inherit;
+.input-group { margin-bottom: 16px; display: flex; flex-direction: column; }
+.input-group label { font-weight: 600; margin-bottom: 6px; }
+.input-group input,
+.input-group textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
 }
-
-.section h2::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: #3498DB;
-  margin: 8px auto;
-}
-
-.project {
-  background: #F8FAFC;
-  padding: 16px;
-  border-radius: 10px;
-  margin-bottom: 18px;
-  color: #1F2933;
-}
+textarea { height: 140px; }
 
 /* FOOTER */
-.footer {
-  text-align: center;
-  padding: 18px;
-  opacity: 0.85;
-}
+.footer { text-align: center; padding: 20px; opacity: 0.8; }
 
-/* =========================
-   MOBILE RESPONSIVE FIXES
-   ========================= */
-
+/* MOBILE FIXES */
 @media (max-width: 768px) {
-
-  /* HERO LAYOUT */
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .hero-text {
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-image img {
-    width: 200px;
-    height: 200px;
-  }
-
-  /* CENTER CONTACT */
-  .hero-contact {
-    justify-content: center;
-  }
-
-  /* BUTTON CENTER */
-  .hero-buttons {
-    display: flex;
-    justify-content: center;
-  }
-
-  /* SKILL CARDS → 1 COLUMN */
-  .skills-wrapper {
-    grid-template-columns: 1fr;
-  }
+  .hero { grid-template-columns: 1fr; text-align: center; }
+  .skills-wrapper { grid-template-columns: 1fr; }
+  .hero-image img { width: 200px; height: 200px; }
+  .hero-contact { justify-content: center; }
 }
