@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <title>Bittu K Thampi | LiDAR & Photogrammetry Specialist</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 
   <!-- Google Analytics -->
@@ -15,7 +15,6 @@
     gtag('config', 'G-6EH6DXWD25');
   </script>
 </head>
-
 <body>
 
 <!-- NAVIGATION -->
@@ -62,7 +61,7 @@
       </p>
     </div>
 
-    <!-- CONTACT INFO ON HERO -->
+    <!-- CONTACT INFO ON HERO (kept as requested) -->
     <div class="hero-contact">
       <div class="contact-item">
         <span>Email</span>
@@ -132,13 +131,11 @@
   </ul>
 </section>
 
-<!-- CONTACT FORM (hidden until Contact clicked; JS toggles visibility) -->
+<!-- CONTACT FORM (hidden by default, shown only in contact-only mode) -->
 <section id="contact" class="section contact-section">
   <h2>Contact Me</h2>
 
   <form action="https://formsubmit.co/bittukthampi@gmail.com" method="POST" class="contact-form">
-
-    <!-- FormSubmit settings -->
     <input type="hidden" name="_captcha" value="false" />
     <input type="hidden" name="_template" value="table" />
 
@@ -172,47 +169,88 @@
 
 <script>
 /*
-  Behavior:
-  - By default contact section is hidden.
-  - When user clicks the Contact tab (hash becomes '#contact'),
-    the script adds a body class that hides other sections and shows only #contact.
-  - If user navigates away (hash removed or changed), the body class is removed.
+  Robust show-only-contact behavior:
+  - When hash==#contact OR a nav link with href="#contact" is clicked:
+      -> hide all main sections + header/footer, show contact section only.
+  - When navigating to other sections (hash changes to something else or home),
+      -> restore normal view.
+  - Also supports direct URL to #contact.
 */
 
-function updateContactView() {
-  try {
-    const isContact = location.hash === '#contact';
-    if (isContact) {
-      document.body.classList.add('show-contact-only');
-      // Ensure contact section is scrolled into view cleanly
-      const contactEl = document.getElementById('contact');
-      if (contactEl) contactEl.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      document.body.classList.remove('show-contact-only');
+(function () {
+  const selectorsToHide = [
+    '.navbar',
+    '.hero',
+    '#skills',
+    '#projects',
+    '#certifications',
+    '.footer'
+  ];
+
+  function showContactOnly() {
+    // hide selectors
+    selectorsToHide.forEach(s => {
+      document.querySelectorAll(s).forEach(el => {
+        el.style.display = 'none';
+      });
+    });
+    // show contact
+    const contactEl = document.getElementById('contact');
+    if (contactEl) {
+      contactEl.style.display = 'block';
+      // scroll top so form is visible
+      contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  } catch (e) {
-    // fail silently
-    console.error(e);
+    // update body class for any CSS rules
+    document.body.classList.add('show-contact-only');
   }
-}
 
-// run on load and when hash changes
-window.addEventListener('load', updateContactView);
-window.addEventListener('hashchange', updateContactView);
-
-// also handle clicks on nav links to ensure proper behavior
-document.addEventListener('click', function (e) {
-  const a = e.target.closest && e.target.closest('a');
-  if (!a) return;
-  if (a.getAttribute('href') === '#contact') {
-    // let the hash change event handle view update
-    // but ensure the default anchor behavior happens
-    setTimeout(updateContactView, 60);
-  } else if (a.classList.contains('nav-link')) {
-    // navigate to other sections -> remove contact-only view
+  function restorePage() {
+    // restore display for selectors (use original display values by clearing inline style)
+    selectorsToHide.forEach(s => {
+      document.querySelectorAll(s).forEach(el => {
+        el.style.display = '';
+      });
+    });
+    const contactEl = document.getElementById('contact');
+    if (contactEl) {
+      contactEl.style.display = ''; // let CSS decide (usually hidden)
+    }
     document.body.classList.remove('show-contact-only');
   }
-});
+
+  function updateViewBasedOnHash() {
+    if (location.hash === '#contact') {
+      showContactOnly();
+    } else {
+      restorePage();
+    }
+  }
+
+  // init on load
+  window.addEventListener('load', function () {
+    updateViewBasedOnHash();
+  });
+
+  // respond to hash changes
+  window.addEventListener('hashchange', function () {
+    updateViewBasedOnHash();
+  });
+
+  // intercept nav link clicks to ensure instant behavior
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a');
+    if (!a) return;
+    const href = a.getAttribute('href') || '';
+    if (href === '#contact') {
+      // allow default navigation then ensure view updates shortly after
+      setTimeout(updateViewBasedOnHash, 50);
+    } else if (href.startsWith('#')) {
+      // a different internal link — restore normal page view
+      setTimeout(updateViewBasedOnHash, 50);
+    }
+  });
+})();
 </script>
 
 </body>
