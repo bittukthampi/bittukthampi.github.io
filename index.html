@@ -15,8 +15,10 @@
     gtag('config', 'G-6EH6DXWD25');
   </script>
 </head>
+
 <body>
 
+<!-- NAVIGATION -->
 <header class="navbar">
   <div class="nav-container">
     <nav class="nav-links">
@@ -24,13 +26,15 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a> <!-- ADDED -->
     </nav>
   </div>
 </header>
 
+<!-- HERO -->
 <section id="home" class="hero">
   <div class="hero-text">
-    <!-- ✅ FULL NAME – ONE COLOR -->
+
     <h1>Hi, I'm Bittu K Thampi</h1>
     <h2>LiDAR & Photogrammetry Specialist</h2>
 
@@ -69,8 +73,9 @@
       </p>
     </div>
 
-    <!-- CONTACT BOXES -->
+    <!-- CONTACT INFO BOXES -->
     <div class="hero-contact">
+
       <div class="contact-item">
         <span>Email</span>
         <a href="mailto:bittukthampi@gmail.com">bittukthampi@gmail.com</a>
@@ -87,16 +92,12 @@
           linkedin.com/in/bittukthampi
         </a>
       </div>
+
     </div>
 
-    <!-- RESUME -->
+    <!-- RESUME BUTTON -->
     <div class="hero-buttons">
-      <a
-        href="Bittu_K_Thampi_Resume.pdf"
-        class="btn"
-        download
-        onclick="gtag('event','resume_download',{event_category:'engagement'});"
-      >
+      <a href="Bittu_K_Thampi_Resume.pdf" class="btn" download>
         DOWNLOAD RESUME
       </a>
     </div>
@@ -107,42 +108,97 @@
   </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills" class="section alt">
   <h2>Technical Skills</h2>
-  <div class="skills-grid">
-    <div class="skill">UAV LiDAR</div>
-    <div class="skill">Mobile LiDAR</div>
-    <div class="skill">SLAM LiDAR</div>
-    <div class="skill">RTK GNSS</div>
-    <div class="skill">Photogrammetry</div>
-    <div class="skill">DSM / DTM</div>
-    <div class="skill">Contour Extraction</div>
-    <div class="skill">Terrain & Volume Analysis</div>
-    <div class="skill">ArcGIS & QGIS</div>
-    <div class="skill">AutoCAD / Civil 3D</div>
+
+  <div class="skills-wrapper">
+
+    <div class="skill-card">
+      UAV LiDAR, Mobile LiDAR, SLAM LiDAR
+    </div>
+
+    <div class="skill-card">
+      RTK GNSS (Static / PPK / CORS), Surveying
+    </div>
+
+    <div class="skill-card">
+      Photogrammetry, Orthophoto Generation
+    </div>
+
+    <div class="skill-card">
+      DSM / DTM Generation, Contour Extraction
+    </div>
+
+    <div class="skill-card">
+      Terrain & Volume Analysis, Digitizing & QA/QC
+    </div>
+
+    <div class="skill-card">
+      ArcGIS, QGIS, AutoCAD, Civil 3D
+    </div>
+
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects" class="section">
   <h2>Project Experience</h2>
+
   <div class="project">
     <h3>UAV LiDAR Survey – Airport Project</h3>
     <p>DSM/DTM creation, orthophoto generation, static GNSS base processing.</p>
   </div>
+
   <div class="project">
     <h3>UAV LiDAR Mapping – Mining Projects</h3>
     <p>Cut & fill, stockpile volume, terrain analysis.</p>
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
 <section id="certifications" class="section alt">
   <h2>Certifications & Courses</h2>
-  <ul>
+  <ul class="cert-list">
     <li>ESRI – Going Places with Spatial Analysis</li>
     <li>Geo University – CRS, Projections & Spatial Representation</li>
   </ul>
 </section>
 
+<!-- CONTACT FORM (NEW) -->
+<section id="contact" class="section">
+  <h2>Contact Me</h2>
+
+  <form action="https://formsubmit.co/bittukthampi@gmail.com" method="POST" class="contact-form">
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <div class="input-group">
+      <label>Your Name</label>
+      <input type="text" name="name" required>
+    </div>
+
+    <div class="input-group">
+      <label>Your Email</label>
+      <input type="email" name="email" required>
+    </div>
+
+    <div class="input-group">
+      <label>Subject</label>
+      <input type="text" name="subject" required>
+    </div>
+
+    <div class="input-group">
+      <label>Message</label>
+      <textarea name="message" required></textarea>
+    </div>
+
+    <button type="submit" class="btn submit-btn">SEND MESSAGE</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
   © <span id="year"></span> Bittu K Thampi
 </footer>
