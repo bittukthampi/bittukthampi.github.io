@@ -85,7 +85,7 @@ body {
 .section h2 { text-align: center; color: inherit; margin: 0 0 12px 0; }
 .section h2::after { content: ""; display: block; width: 50px; height: 3px; background: #3498DB; margin: 8px auto 0; }
 
-/* PROJECTS */
+/* PROJECT CARDS */
 .project { background: #F8FAFC; color: #1F2933; padding: 16px; border-radius: 10px; margin-bottom: 18px; }
 .project h3 { color: #2563EB; margin: 0 0 6px 0; }
 
@@ -93,8 +93,8 @@ body {
 .cert-list { list-style: none; padding: 0; margin: 0; }
 .cert-list li { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
 
-/* CONTACT FORM STYLES (visible when contact-only active) */
-.contact-section { display: none; } /* default hidden; JS will show by adding body class */
+/* CONTACT FORM STYLES */
+.contact-section { display: none; } /* default hidden; JS will show contact-only mode */
 .contact-form { max-width: 700px; margin: 0 auto; background: #F8FAFC; padding: 28px; border-radius: 12px; color: #1F2933; box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
 .input-group { display: flex; flex-direction: column; margin-bottom: 16px; }
 .input-group label { font-weight: 600; margin-bottom: 6px; color: #1F2933; }
@@ -106,31 +106,25 @@ body {
 .footer { text-align: center; padding: 18px; font-size: 0.9rem; opacity: 0.85; }
 
 /* =========================
-   SHOW-ONLY-CONTACT MODE (class added to <body> by JS)
+   SHOW-ONLY-CONTACT MODE (via JS)
    =========================
-   When body has .show-contact-only:
-     - hide header, hero, skills, projects, certifications, footer
-     - show contact section only
+   JS will add class 'show-contact-only' to body and inline styles as fallback.
 */
 body.show-contact-only .navbar,
 body.show-contact-only .hero,
 body.show-contact-only #skills,
 body.show-contact-only #projects,
 body.show-contact-only #certifications,
-body.show-contact-only .footer,
-body.show-contact-only .section.alt { display: none !important; }
-
+body.show-contact-only .footer {
+  display: none !important;
+}
 body.show-contact-only .contact-section {
   display: block !important;
   padding-top: 40px;
   padding-bottom: 60px;
   background: linear-gradient(135deg, #1F2933, #2C3E50);
 }
-
-/* center contact form when in contact-only mode */
-body.show-contact-only .contact-form {
-  margin-top: 18px;
-}
+body.show-contact-only .contact-form { margin-top: 18px; }
 
 /* MOBILE */
 @media (max-width: 768px) {
@@ -146,7 +140,7 @@ body.show-contact-only .contact-form {
   .hero-buttons { display: flex; justify-content: center; }
 }
 
-/* Accessibility focus */
+/* Accessibility: focus styles */
 a:focus, .btn:focus { outline: 3px solid rgba(52,152,219,0.25); outline-offset: 2px; }
 
 /* Desktop polish */
