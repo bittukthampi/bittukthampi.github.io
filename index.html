@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAVIGATION (kept visible in contact-only mode) -->
 <header class="navbar">
   <div class="nav-container">
     <nav class="nav-links">
@@ -61,7 +61,7 @@
       </p>
     </div>
 
-    <!-- CONTACT INFO ON HERO (kept as requested) -->
+    <!-- CONTACT INFO ON HERO -->
     <div class="hero-contact">
       <div class="contact-item">
         <span>Email</span>
@@ -131,7 +131,7 @@
   </ul>
 </section>
 
-<!-- CONTACT FORM (hidden by default, shown only in contact-only mode) -->
+<!-- CONTACT FORM (hidden by default, shown in contact-only mode) -->
 <section id="contact" class="section contact-section">
   <h2>Contact Me</h2>
 
@@ -168,18 +168,8 @@
 </footer>
 
 <script>
-/*
-  Robust show-only-contact behavior:
-  - When hash==#contact OR a nav link with href="#contact" is clicked:
-      -> hide all main sections + header/footer, show contact section only.
-  - When navigating to other sections (hash changes to something else or home),
-      -> restore normal view.
-  - Also supports direct URL to #contact.
-*/
-
 (function () {
   const selectorsToHide = [
-    '.navbar',
     '.hero',
     '#skills',
     '#projects',
@@ -188,7 +178,7 @@
   ];
 
   function showContactOnly() {
-    // hide selectors
+    // hide sections (but keep navbar)
     selectorsToHide.forEach(s => {
       document.querySelectorAll(s).forEach(el => {
         el.style.display = 'none';
@@ -198,60 +188,16 @@
     const contactEl = document.getElementById('contact');
     if (contactEl) {
       contactEl.style.display = 'block';
-      // scroll top so form is visible
       contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-    // update body class for any CSS rules
     document.body.classList.add('show-contact-only');
   }
 
   function restorePage() {
-    // restore display for selectors (use original display values by clearing inline style)
     selectorsToHide.forEach(s => {
       document.querySelectorAll(s).forEach(el => {
         el.style.display = '';
       });
     });
     const contactEl = document.getElementById('contact');
-    if (contactEl) {
-      contactEl.style.display = ''; // let CSS decide (usually hidden)
-    }
-    document.body.classList.remove('show-contact-only');
-  }
-
-  function updateViewBasedOnHash() {
-    if (location.hash === '#contact') {
-      showContactOnly();
-    } else {
-      restorePage();
-    }
-  }
-
-  // init on load
-  window.addEventListener('load', function () {
-    updateViewBasedOnHash();
-  });
-
-  // respond to hash changes
-  window.addEventListener('hashchange', function () {
-    updateViewBasedOnHash();
-  });
-
-  // intercept nav link clicks to ensure instant behavior
-  document.addEventListener('click', function (e) {
-    const a = e.target.closest('a');
-    if (!a) return;
-    const href = a.getAttribute('href') || '';
-    if (href === '#contact') {
-      // allow default navigation then ensure view updates shortly after
-      setTimeout(updateViewBasedOnHash, 50);
-    } else if (href.startsWith('#')) {
-      // a different internal link — restore normal page view
-      setTimeout(updateViewBasedOnHash, 50);
-    }
-  });
-})();
-</script>
-
-</body>
-</html>
+    if
